@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#screen {
+    height: 100vh;
+    position: relative;
+}
+
+#top {
+    height: 15vh;
+    background-color: #009688;
+}
+
+#bot {
+    height: calc(100% - 15vh);
+    background-color: #d6dbd6;
+}
+
+#app {
+    width: 80%;
+    height: 95%;
+    position: absolute;
+    top: 20px;
+    left: 150px;
+    display: flex;
+    /* DEBUG */
+    /* background-color: blue; */
+}
+
+#left , #right {
+    height: 100%;
+}
+
+#left {
+    width: 350px;
+    /* DEBUG */
+    background-color: aqua;
+}
+
+#right {
+    flex-grow: 1;
+    /* DEBUG */
+    /* background-color: brown; */
+}
+
+#user-bar {
+    background-color: #eaeaea;
+    /* DEBUG */
+    height: 10%;
+    border-right: 1px dashed black;
+}
+
+#notifications-bar {
+    background-color: #8edafc;
+    /* DEBUG */
+    height: 12%;
+}
+
+#search-bar {
+    background-color: #fff;
+    /* DEBUG */
+    height: 7%;
+    border-bottom: 1px dashed grey;
+}
+
+#nav-chats {
+    background-color: #fff;
+    /* DEBUG */
+    height: calc(100% - 10% - 12% - 7%);
+}
+
+#chat {
+    background-image: url(../imgs/mine.jpg);
+    /* DEBUG */
+    height: 80%;
+}
