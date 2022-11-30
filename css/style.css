@@ -74,6 +74,26 @@
 
 #chat {
     background-image: url(../imgs/mine.jpg);
+    position: relative;
     /* DEBUG */
     height: 80%;
+}
+
+.msg {
+    position: absolute;
+    width: 20%;
+    height: 10%;
+    border-radius: 15px;
+}
+
+.sent {
+    background-color: #d5f9ba;
+    top: 30px;
+    left: 70%;
+}
+
+.received {
+    background-color: #fff;
+    top: 120px;
+    left: 10%;
 }
