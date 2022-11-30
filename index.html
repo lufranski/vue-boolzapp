@@ -20,13 +20,39 @@
 
             <div id="left">
 
-                <div id="user-bar"></div>
+                <div id="user-bar">
+                    
+                    
+                    
+                </div>
                 
                 <div id="notifications-bar"></div>
                 
                 <div id="search-bar"></div>
                 
-                <div id="nav-chats"></div>
+                <div id="nav-chats">
+
+                    <ul>
+                        <li v-for="contact in contacts">
+
+                            <div class="contact-img">
+                                <img :src="contact.avatar">
+                            </div>
+
+                            <div class="contact-info">
+                                <h4>{{contact.name}}</h4>
+
+                                <p>Ultimo messaggio inviato</p>
+                            </div>
+
+                            <div class="hour">
+                                12.00
+                            </div>
+
+                        </li>
+                    </ul>
+
+                </div>
 
             </div>
 

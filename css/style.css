@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: Helvetica, sans-serif;
+}
+
 #screen {
     height: 100vh;
     position: relative;
@@ -48,6 +52,7 @@
 
 #user-bar {
     background-color: #eaeaea;
+    display: flex;
     /* DEBUG */
     height: 10%;
     border-right: 1px dashed black;
@@ -96,4 +101,41 @@
     background-color: #fff;
     top: 120px;
     left: 10%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    display: flex;
+    padding: 5px 10px;
+}
+
+.contact-img img{
+    max-width: 50px;
+    border-radius: 50%;
+}
+
+.contact-info {
+    width: 80%;
+    padding-left: 10px;
+}
+
+.contact-info h4 {
+    font-weight: 500;
+}
+
+.contact-info p {
+    font-size: 14px;
+    color: #d6d7d9;
+}
+
+.contact-img , .hour {
+    flex-grow: 1;
+}
+
+.hour {
+    color: #d6d7d9;
+    font-size: 14px;
 }
