@@ -1,3 +1,4 @@
+/* General Rules */
 * {
     margin: 0;
     padding: 0;
@@ -23,6 +24,7 @@ body {
     background-color: #d6dbd6;
 }
 
+/* App Rules */
 #app {
     width: 80%;
     height: 95%;
@@ -38,14 +40,15 @@ body {
 
 #left {
     width: 400px;
-    
 }
 
 #right {
     flex-grow: 1;
-    
 }
 
+/* Left-section Rules */
+
+/* User-bar Rules */
 #user-bar {
     background-color: #eaeaea;
     display: flex;
@@ -53,109 +56,6 @@ body {
     padding: 5px 10px;
     border-right: 1px solid #d6d7d9;
 }
-
-#notifications-bar {
-    background-color: #8edafc;
-    display: flex;
-    padding: 10px 15px;
-}
-
-#notifications-icon i {
-    font-size: 20px;
-    padding: 10px;
-    border-radius: 50%;
-    background-color: #fff;
-    color: #8edafc;
-}
-
-#notifications-text {
-    font-size: 13px;
-    align-self: center;
-    margin-left: 10px;
-}
-
-#notifications-text a {
-    color: #434242;
-}
-
-#search-bar {
-    background-color: #fff;
-    padding: 10px;
-    position: relative;
-}
-
-#search-bar input {
-    width: 100%;
-    padding: 10px 45px;
-}
-
-#search-bar i {
-    position: absolute;
-    top: 23px;
-    left: 25px;
-    font-size: 15px;
-    color: #a7a6a7;
-}
-
-#nav-chats {
-    background-color: #fff;
-    /* DEBUG */
-    height: 460px;
-    overflow-y: scroll;
-}
-
-ul {
-    list-style-type: none;
-}
-
-#nav-chats li {
-    display: flex;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-li:hover {
-    background-color: #e9ebeb;
-}
-
-#chat {
-    background-image: url(../imgs/mine.jpg);
-    /* position: relative; */
-    padding: 50px;
-    /* DEBUG */
-    height: 80%;
-}
-
-
-
-.contact-img img{
-    max-width: 50px;
-    border-radius: 50%;
-}
-
-.contact-info {
-    width: 80%;
-    padding-left: 10px;
-}
-
-.contact-info h4 {
-    font-weight: 500;
-}
-
-.contact-info p {
-    font-size: 14px;
-    color: #a7a6a7;
-}
-
-.contact-img , .hour {
-    flex-grow: 1;
-}
-
-.hour {
-    color: #a7a6a7;
-    font-size: 14px;
-}
-
 
 #user-img img {
     max-width: 50px;
@@ -186,6 +86,106 @@ li:hover {
     color: #434242;
 }
 
+/* Notifications-bar Rules */
+
+#notifications-bar {
+    background-color: #8edafc;
+    display: flex;
+    padding: 10px 15px;
+}
+
+#notifications-icon i {
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #8edafc;
+}
+
+#notifications-text {
+    font-size: 13px;
+    align-self: center;
+    margin-left: 10px;
+}
+
+#notifications-text a {
+    color: #434242;
+}
+
+/* Search-bar Rules */
+
+#search-bar {
+    background-color: #fff;
+    padding: 10px;
+    position: relative;
+}
+
+#search-bar input {
+    width: 100%;
+    padding: 10px 45px;
+}
+
+#search-bar i {
+    position: absolute;
+    top: 23px;
+    left: 25px;
+    font-size: 15px;
+    color: #a7a6a7;
+}
+
+/* Nav-chats Rules */
+
+#nav-chats {
+    background-color: #fff;
+    height: 460px;
+    overflow-y: scroll;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#nav-chats li {
+    display: flex;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+li:hover {
+    background-color: #e9ebeb;
+}
+
+.contact-img img{
+    max-width: 50px;
+    border-radius: 50%;
+}
+
+.contact-info {
+    width: 80%;
+    padding-left: 10px;
+}
+
+.contact-info h4 {
+    font-weight: 500;
+}
+
+.contact-info p {
+    font-size: 14px;
+    color: #a7a6a7;
+}
+
+.contact-img , .hour {
+    flex-grow: 1;
+}
+
+.hour {
+    color: #a7a6a7;
+    font-size: 14px;
+}
+
+/* Right Section Rules */
+
+/* Chat-bar Rules */
 .chat-bar {
     background-color: #eaeaea;
     display: flex;
@@ -211,6 +211,14 @@ li:hover {
 
 #chat-controls {
     width: 15%;
+}
+
+/* Chat Rules */
+
+#chat {
+    background-image: url(../imgs/mine.jpg);
+    padding: 50px;
+    height: 80%;
 }
 
 #chat ul {
