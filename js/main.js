@@ -89,7 +89,7 @@ createApp({
                 },
                 {
                     name: 'Alessandro L.',
-                    avatar: 'imgs/avatar_5.jpg',
+                    avatar: 'imgs/avatar_2.jpg',
                     visible: true,
                     messages: [
                         {
@@ -106,7 +106,7 @@ createApp({
                 },
                 {
                     name: 'Claudia',
-                    avatar: 'imgs/avatar_6.jpg',
+                    avatar: 'imgs/avatar_4.jpg',
                     visible: true,
                     messages: [
                         {
@@ -128,7 +128,7 @@ createApp({
                 },
                 {
                     name: 'Federico',
-                    avatar: 'imgs/avatar_7.jpg',
+                    avatar: 'imgs/avatar_1.jpg',
                     visible: true,
                     messages: [
                         {
@@ -145,7 +145,7 @@ createApp({
                 },
                 {
                     name: 'Davide',
-                    avatar: 'imgs/avatar_8.jpg',
+                    avatar: 'imgs/avatar_3.jpg',
                     visible: true,
                     messages: [
                         {
