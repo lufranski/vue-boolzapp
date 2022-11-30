@@ -108,7 +108,7 @@ ul {
     list-style-type: none;
 }
 
-li {
+#nav-chats li {
     display: flex;
     padding: 5px 10px;
     cursor: pointer;
@@ -120,29 +120,12 @@ li:hover {
 
 #chat {
     background-image: url(../imgs/mine.jpg);
-    position: relative;
+    /* position: relative; */
+    padding: 50px;
     /* DEBUG */
     height: 80%;
 }
 
-.msg {
-    /* position: absolute; */
-    width: 20%;
-    height: 10%;
-    border-radius: 15px;
-}
-
-.sent {
-    background-color: #d5f9ba;
-    top: 30px;
-    left: 70%;
-}
-
-.received {
-    background-color: #fff;
-    top: 120px;
-    left: 10%;
-}
 
 
 .contact-img img{
@@ -212,17 +195,63 @@ li:hover {
     height: 10%;
 }
 
-.chat-bar h4 {
-    margin-left: 10px;
+#chat-text {
+    width: 75%;
+    margin-left: 20px;
+}
+
+#chat-text h4 {
     font-weight: 500;
 }
 
+#chat-text p {
+    font-size: 11px;
+    color: #434242;
+}
+
 #chat-controls {
-    margin-left: 550px;
     width: 15%;
 }
 
+#chat ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.msg {
+    width: 30%;
+    height: 10%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 15px;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+}
+
+.sent {
+    background-color: #d5f9ba;
+    /* top: 30px;
+    left: 70%; */
+}
+
+.received {
+    background-color: #fff;
+    /* top: 120px;
+    left: 10%; */
+}
+
 #chat .sent {
+    /* position: absolute; */
+    /* right: 200px; */
+    align-self: flex-end;
+}
+
+.msg-info {
+    font-size: 10px;
+    align-self: flex-end;
     position: absolute;
-    right: 200px;
+    bottom: 2px;
+    right: 8px;
 }

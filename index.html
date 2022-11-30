@@ -101,7 +101,12 @@
                         <img :src="contacts[0].avatar">
                     </div>
 
-                    <h4>Michele</h4>
+                    <div id="chat-text">
+
+                        <h4>Michele</h4>
+                        <p>Ultimo accesso oggi alle 12.00</p>
+                        
+                    </div>
 
 
                     <div id="chat-controls" class="controls">
@@ -121,8 +126,16 @@
                     <!-- <div class="msg received"></div> -->
 
                     <ul>
-                        <li v-for="(msg, index) in contacts[0].messages" class="msg" :class="contacts[0].messages[index].status === sent? 'sent' : 'received' ">
-                            {{contacts[0].messages[index].message}}
+                        <li v-for="(msg, index) in contacts[0].messages" class="msg" :class="contacts[0].messages[index].status === 'sent'? 'sent' : 'received' ">
+
+                            <div class="msg-text">
+                                {{contacts[0].messages[index].message}}
+                            </div>
+
+                            <div class="msg-info">
+                                {{contacts[0].messages[index].date.slice(11,16)}}
+                            </div>
+
                         </li>
                     </ul>
 
