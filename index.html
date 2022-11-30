@@ -70,7 +70,7 @@
                 <div id="nav-chats">
 
                     <ul>
-                        <li v-for="contact in contacts">
+                        <li v-for="(contact, index) in contacts" @click="chatSwapper(index)">
 
                             <div class="contact-img">
                                 <img :src="contact.avatar">
@@ -98,12 +98,12 @@
                 <div class="chat-bar">
 
                     <div id="user-img">
-                        <img :src="contacts[0].avatar">
+                        <img :src="contacts[activeChat].avatar">
                     </div>
 
                     <div id="chat-text">
 
-                        <h4>Michele</h4>
+                        <h4>{{contacts[activeChat].name}}</h4>
                         <p>Ultimo accesso oggi alle 12.00</p>
                         
                     </div>
@@ -126,14 +126,14 @@
                     <!-- <div class="msg received"></div> -->
 
                     <ul>
-                        <li v-for="(msg, index) in contacts[0].messages" class="msg" :class="contacts[0].messages[index].status === 'sent'? 'sent' : 'received' ">
+                        <li v-for="(msg, index) in contacts[activeChat].messages" class="msg" :class="contacts[activeChat].messages[index].status === 'sent'? 'sent' : 'received' ">
 
                             <div class="msg-text">
-                                {{contacts[0].messages[index].message}}
+                                {{contacts[activeChat].messages[index].message}}
                             </div>
 
                             <div class="msg-info">
-                                {{contacts[0].messages[index].date.slice(11,16)}}
+                                {{contacts[activeChat].messages[index].date.slice(11,16)}}
                             </div>
 
                         </li>

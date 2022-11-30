@@ -3,6 +3,7 @@ const {createApp} = Vue;
 createApp({
     data(){
         return {
+            activeChat: 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -166,6 +167,13 @@ createApp({
                     ],
                 }
             ]
+            
+        }
+    },
+    methods: {
+        chatSwapper(chatIndex){
+            
+            this.activeChat = chatIndex;
             
         }
     }
