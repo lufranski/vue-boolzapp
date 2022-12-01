@@ -189,7 +189,7 @@ createApp({
                 
             this.newMsg = '';
                 
-            setTimeout(this.contactAnswers(index), 3000);
+            setTimeout(() => this.contactAnswers(index), 3000);
                 
         },
         contactAnswers(index){
