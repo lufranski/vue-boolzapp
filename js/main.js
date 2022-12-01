@@ -5,6 +5,7 @@ createApp({
         return {
             activeChat: 0,
             newMsg: '',
+            browseContacts: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -196,7 +197,7 @@ createApp({
 
             this.contacts[index].messages.push(
                 {
-                    date: '10/01/2020 15:50:00', 
+                    date: '10/01/2020 20:50:00', 
                     message: 'Oke', 
                     status: 'received'
                 }
