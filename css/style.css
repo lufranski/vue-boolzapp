@@ -68,7 +68,6 @@ body {
 }
 
 .controls {
-    color: #a7a6a7;
     width: 30%;
     display: flex;
     justify-content: space-evenly;
@@ -78,11 +77,12 @@ body {
     margin-left: 74px;
 }
 
-.controls i {
+i {
+    color: #a7a6a7;
     cursor: pointer;
 }
 
-.controls i:hover {
+i:hover {
     color: #434242;
 }
 
@@ -130,7 +130,7 @@ body {
     top: 23px;
     left: 25px;
     font-size: 15px;
-    color: #a7a6a7;
+    /* color: #a7a6a7; */
 }
 
 /* Nav-chats Rules */
@@ -192,7 +192,7 @@ li:hover {
     align-items: center;
     padding: 5px 10px;
     /* DEBUG */
-    height: 10%;
+    /* height: 10%; */
 }
 
 #chat-text {
@@ -240,19 +240,13 @@ li:hover {
 
 .sent {
     background-color: #d5f9ba;
-    /* top: 30px;
-    left: 70%; */
 }
 
 .received {
     background-color: #fff;
-    /* top: 120px;
-    left: 10%; */
 }
 
 #chat .sent {
-    /* position: absolute; */
-    /* right: 200px; */
     align-self: flex-end;
 }
 
@@ -262,4 +256,21 @@ li:hover {
     position: absolute;
     bottom: 2px;
     right: 8px;
+}
+
+/* Chat bottom bar Rules */
+
+.chat-bar.bottom {
+    /* height: 10%; */
+    padding: 13.5px 5px;
+}
+
+.chat-bar.bottom i {
+    font-size: 23px;
+}
+
+.chat-bar.bottom input {
+    width: 90%;
+    margin: 0 15px;
+    padding: 10px 15px;
 }
