@@ -4,6 +4,7 @@ createApp({
     data(){
         return {
             activeChat: 0,
+            newMsg: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -175,6 +176,19 @@ createApp({
             
             this.activeChat = chatIndex;
             
+        },
+        addNewMsg(index){
+            
+            this.contacts[index].messages.push(
+                {
+                    date: '10/01/2020 15:50:00', 
+                    message: this.newMsg, 
+                    status: 'sent'
+                }
+            );
+
+            this.newMsg = '';
+
         }
     }
 }).mount('#app')
