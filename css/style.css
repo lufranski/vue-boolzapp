@@ -137,8 +137,8 @@ i:hover {
 
 #nav-chats {
     background-color: #fff;
-    height: 460px;
-    overflow-y: scroll;
+    height: 71.7%;
+    overflow-y: auto;
 }
 
 ul {
