@@ -185,9 +185,23 @@ createApp({
                     message: this.newMsg, 
                     status: 'sent'
                 }
-            );
+                );
+                
+                this.newMsg = '';
+                
+                setTimeout(contactAnswers, 1000);
+                
+                function contactAnswers(index) {
+                    
+                    this.contacts[index].messages.push(
+                        {
+                            date: '10/01/2020 15:50:00', 
+                            message: 'Oke', 
+                            status: 'received'
+                        }
+                    )
 
-            this.newMsg = '';
+                }
 
         }
     }
