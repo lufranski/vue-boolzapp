@@ -181,27 +181,26 @@ createApp({
             
             this.contacts[index].messages.push(
                 {
-                    date: '10/01/2020 15:50:00', 
+                    date: '10/01/2020 20:50:00', 
                     message: this.newMsg, 
                     status: 'sent'
                 }
-                );
+            );
                 
-                this.newMsg = '';
+            this.newMsg = '';
                 
-                setTimeout(contactAnswers, 1000);
+            setTimeout(this.contactAnswers(index), 3000);
                 
-                function contactAnswers(index) {
-                    
-                    this.contacts[index].messages.push(
-                        {
-                            date: '10/01/2020 15:50:00', 
-                            message: 'Oke', 
-                            status: 'received'
-                        }
-                    )
+        },
+        contactAnswers(index){
 
+            this.contacts[index].messages.push(
+                {
+                    date: '10/01/2020 15:50:00', 
+                    message: 'Oke', 
+                    status: 'received'
                 }
+            );
 
         }
     }
