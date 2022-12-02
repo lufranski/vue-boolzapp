@@ -275,6 +275,9 @@ li:hover .hover-chevron {
     top: 20px;
     left: 90px;
     font-size: 13px;
+    box-shadow: 3px 3px rgba(0, 0, 0, .1);
+    border-radius: 5px;
+    z-index: 30;
     /* DEBUG */
     padding: 10px;
     width: 120px;

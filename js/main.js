@@ -215,11 +215,29 @@ createApp({
             return contact.name.toLowerCase();
 
         },
-        // chevronMenu(activeIndex){
+        chevronMenu(messageIndex){
 
-        //     returnthis.contacts[activeIndex].visible = true;
+            if(this.isOpen === false) {
+                
+                this.isOpen = messageIndex;
+            
+            } else {
 
-        // }
+                this.isOpen = false;
+
+            }
+
+
+            // isOpen = false;
+
+            return this.isOpen;
+
+        },
+        deleteMsg(currentChat, deleteIndex){
+
+           this.contacts[currentChat].messages.splice(deleteIndex, 1);
+
+        }
         
     }
 }).mount('#app')

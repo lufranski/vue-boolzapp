@@ -143,15 +143,19 @@
                                     </div>
                                     
                                     <!-- v-if="visible" -->
-                                    <div class="hover-chevron" @click="isOpen = !isOpen">
+                                    <div class="hover-chevron" @click="chevronMenu(index)">
                                         <i class="fa-solid fa-chevron-down"></i>
                                     </div>
 
-                                    <div v-show="isOpen" class="chevron-menu">
+                                    <div v-if="isOpen === index" class="chevron-menu">
 
-                                        <div class="chevron-menu-controls">Message Info</div>
+                                        <div class="chevron-menu-controls">
+                                            Message Info
+                                        </div>
 
-                                        <div class="chevron-menu-controls">Delete Message</div>
+                                        <div class="chevron-menu-controls" @click="deleteMsg(activeChat, index)">
+                                            Delete Message
+                                        </div>
 
                                     </div>
 
