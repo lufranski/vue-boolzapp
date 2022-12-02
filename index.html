@@ -127,19 +127,32 @@
 
                 <div id="chat">
 
-                    <ul>
-                        <li v-for="(msg, index) in contacts[activeChat].messages" class="msg" :class="contacts[activeChat].messages[index].status === 'sent'? 'sent' : 'received' ">
+                    <template v-for="(msg, index, visible) in contacts[activeChat].messages">
 
-                            <div class="msg-text">
-                                {{contacts[activeChat].messages[index].message}}
-                            </div>
+                        <ul>
+                            <li 
+                                class="msg" :class="contacts[activeChat].messages[index].status === 'sent'? 'sent' : 'received' ">
+                                <!-- @mouseover="visible = true" @mouseleave="visible = false" -->
+    
+                                    <div class="msg-text">
+                                        {{contacts[activeChat].messages[index].message}}
+                                    </div>
+    
+                                    <div class="msg-info">
+                                        {{contacts[activeChat].messages[index].date.slice(11,16)}}
+                                    </div>
+                                    
+                                    <!-- v-if="visible" -->
+                                    <div class="hover-chevron" @click="">
+                                        <i class="fa-solid fa-chevron-down"></i>
+                                    </div>
 
-                            <div class="msg-info">
-                                {{contacts[activeChat].messages[index].date.slice(11,16)}}
-                            </div>
+    
+                            </li>
+                        </ul>
 
-                        </li>
-                    </ul>
+                    </template>
+
 
                 </div>
 

@@ -259,6 +259,17 @@ li:hover {
     right: 8px;
 }
 
+.hover-chevron {
+    position: absolute;
+    top: 2px;
+    right: 8px;
+    display: none;
+}
+
+li:hover .hover-chevron {
+    display: block;
+}
+
 /* Chat bottom bar Rules */
 
 .chat-bar.bottom {
