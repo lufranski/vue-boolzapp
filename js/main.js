@@ -6,6 +6,7 @@ createApp({
             activeChat: 0,
             newMsg: '',
             browseContacts: '',
+            isOpen: false,
             contacts: [
                 {
                     name: 'Michele',
@@ -213,7 +214,12 @@ createApp({
 
             return contact.name.toLowerCase();
 
-        }
+        },
+        // chevronMenu(activeIndex){
+
+        //     returnthis.contacts[activeIndex].visible = true;
+
+        // }
         
     }
 }).mount('#app')

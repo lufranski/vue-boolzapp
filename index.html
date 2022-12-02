@@ -127,7 +127,7 @@
 
                 <div id="chat">
 
-                    <template v-for="(msg, index, visible) in contacts[activeChat].messages">
+                    <template v-for="(msg, index) in contacts[activeChat].messages">
 
                         <ul>
                             <li 
@@ -143,8 +143,16 @@
                                     </div>
                                     
                                     <!-- v-if="visible" -->
-                                    <div class="hover-chevron" @click="">
+                                    <div class="hover-chevron" @click="isOpen = !isOpen">
                                         <i class="fa-solid fa-chevron-down"></i>
+                                    </div>
+
+                                    <div v-show="isOpen" class="chevron-menu">
+
+                                        <div class="chevron-menu-controls">Message Info</div>
+
+                                        <div class="chevron-menu-controls">Delete Message</div>
+
                                     </div>
 
     
