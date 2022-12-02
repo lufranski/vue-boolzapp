@@ -69,25 +69,29 @@
                 
                 <div id="nav-chats">
 
-                    <ul>
-                        <li v-if="contacts[activeChat].name.includes(browseContacts)" v-for="(contact, index) in contacts" @click="chatSwapper(index)">
+                    <template v-for="(contact, index) in contacts">
 
-                            <div class="contact-img">
-                                <img :src="contact.avatar">
-                            </div>
+                        <ul>
+                            <li v-if="convertContactToLowerCase(contact).includes(convertInputToLowerCase())" @click="chatSwapper(index)">
+    
+                                <div class="contact-img">
+                                    <img :src="contact.avatar">
+                                </div>
+    
+                                <div class="contact-info">
+                                    <h4>{{contact.name}}</h4>
+    
+                                    <p>Ultimo messaggio inviato</p>
+                                </div>
+    
+                                <div class="hour">
+                                    12.00
+                                </div>
+    
+                            </li>
+                        </ul>
 
-                            <div class="contact-info">
-                                <h4>{{contact.name}}</h4>
-
-                                <p>Ultimo messaggio inviato</p>
-                            </div>
-
-                            <div class="hour">
-                                12.00
-                            </div>
-
-                        </li>
-                    </ul>
+                    </template>
 
                 </div>
 
@@ -122,8 +126,6 @@
                 </div>
 
                 <div id="chat">
-
-                    <!-- <div class="msg received"></div> -->
 
                     <ul>
                         <li v-for="(msg, index) in contacts[activeChat].messages" class="msg" :class="contacts[activeChat].messages[index].status === 'sent'? 'sent' : 'received' ">

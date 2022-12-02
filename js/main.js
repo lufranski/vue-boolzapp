@@ -203,6 +203,17 @@ createApp({
                 }
             );
 
+        },
+        convertInputToLowerCase(){
+
+            return this.browseContacts.toLowerCase();
+
+        },
+        convertContactToLowerCase(contact){
+
+            return contact.name.toLowerCase();
+
         }
+        
     }
 }).mount('#app')
