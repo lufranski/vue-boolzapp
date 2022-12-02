@@ -69,9 +69,9 @@
                 
                 <div id="nav-chats">
 
-                    <template v-for="(contact, index) in contacts">
+                    <ul>
+                        <template v-for="(contact, index) in contacts">
 
-                        <ul>
                             <li v-if="convertContactToLowerCase(contact).includes(convertInputToLowerCase())" @click="chatSwapper(index)">
     
                                 <div class="contact-img">
@@ -81,17 +81,17 @@
                                 <div class="contact-info">
                                     <h4>{{contact.name}}</h4>
     
-                                    <p>Ultimo messaggio inviato</p>
+                                    <p>{{contact.messages[contact.messages.length - 1].message}}</p>
                                 </div>
     
                                 <div class="hour">
-                                    12.00
+                                    {{contact.messages[contact.messages.length - 1].date.slice(11,16)}}
                                 </div>
     
                             </li>
-                        </ul>
+                        </template>
+                    </ul>
 
-                    </template>
 
                 </div>
 
@@ -127,9 +127,9 @@
 
                 <div id="chat">
 
-                    <template v-for="(msg, index) in contacts[activeChat].messages">
-
-                        <ul>
+                    
+                    <ul>
+                        <template v-for="(msg, index) in contacts[activeChat].messages">
                             <li 
                                 class="msg" :class="contacts[activeChat].messages[index].status === 'sent'? 'sent' : 'received' ">
                                 <!-- @mouseover="visible = true" @mouseleave="visible = false" -->
@@ -161,9 +161,9 @@
 
     
                             </li>
-                        </ul>
+                        </template>
+                    </ul>
 
-                    </template>
 
 
                 </div>
