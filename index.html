@@ -21,7 +21,7 @@
 
             <div id="left">
 
-                <div id="user-bar">
+                <!-- <div class="user-bar">
                     
                     <div id="user-img">
                         <img :src="contacts[3].avatar">
@@ -40,9 +40,28 @@
 
                     </div>
                     
+                </div> -->
+
+                <div class="bar user">
+                    <div id="user-img">
+                        <img :src="contacts[3].avatar">
+                    </div>
+
+                    <h4>Federico Lufrano</h4>
+
+
+                    <div class="controls" id="user-controls">
+                        
+                        <i class="fa-solid fa-circle-notch"></i>
+
+                        <i class="fa-solid fa-message"></i>
+
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+
+                    </div>
                 </div>
                 
-                <div id="notifications-bar">
+                <div class="bar notifications">
 
                     <div id="notifications-icon">
                         
@@ -59,7 +78,7 @@
 
                 </div>
                 
-                <div id="search-bar">
+                <div class="bar search">
 
                     <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="browseContacts">
 
@@ -67,9 +86,9 @@
 
                 </div>
                 
-                <div id="nav-chats">
+                <!-- <div id="nav-chats"> -->
 
-                    <ul>
+                    <ul id="nav-chats">
                         <template v-for="(contact, index) in contacts">
 
                             <li v-if="convertContactToLowerCase(contact).includes(convertInputToLowerCase())" @click="chatSwapper(index)">
@@ -98,13 +117,13 @@
                     </ul>
 
 
-                </div>
+                <!-- </div> -->
 
             </div>
 
             <div id="right">
 
-                <div class="chat-bar">
+                <div class="bar chat">
 
                     <div id="user-img">
                         <img :src="contacts[activeChat].avatar">
@@ -179,7 +198,7 @@
 
                 </div>
 
-                <div class="chat-bar bottom">
+                <div class="bar chat bottom">
 
                     <i class="fa-regular fa-face-smile"></i>
 

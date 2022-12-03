@@ -26,11 +26,12 @@ body {
 
 /* App Rules */
 #app {
-    width: 80%;
-    height: 95%;
+    width: 90%;
+    /* margin: 10vh auto; */
+    height: 80vh;
     position: absolute;
-    top: 20px;
-    left: 150px;
+    top: 8vh;
+    left: 10vh;
     display: flex;
 }
 
@@ -39,22 +40,27 @@ body {
 }
 
 #left {
-    width: 400px;
+    width: 30%;
 }
 
 #right {
     flex-grow: 1;
 }
 
+.bar {
+    width: 100%;
+    background-color: #eaeaea;
+    height: 10vh;
+    display: flex;
+}
+
 /* Left-section Rules */
 
 /* User-bar Rules */
-#user-bar {
-    background-color: #eaeaea;
-    display: flex;
+.user.bar {
     align-items: center;
-    padding: 5px 10px;
     border-right: 1px solid #d6d7d9;
+    padding-left: 10px;
 }
 
 #user-img img {
@@ -62,8 +68,9 @@ body {
     border-radius: 50%;
 }
 
-#user-bar h4 {
+.user.bar h4 {
     font-weight: 500;
+    margin-right: 15px;
     margin-left: 20px;
 }
 
@@ -88,9 +95,9 @@ i:hover {
 
 /* Notifications-bar Rules */
 
-#notifications-bar {
+.bar.notifications {
     background-color: #8edafc;
-    display: flex;
+    /* display: flex; */
     padding: 10px 15px;
 }
 
@@ -114,18 +121,19 @@ i:hover {
 
 /* Search-bar Rules */
 
-#search-bar {
+.bar.search {
     background-color: #fff;
     padding: 10px;
     position: relative;
 }
 
-#search-bar input {
+.bar.search input {
     width: 100%;
     padding: 10px 45px;
 }
 
-#search-bar i {
+
+.bar.search i {
     position: absolute;
     top: 23px;
     left: 25px;
@@ -137,17 +145,16 @@ i:hover {
 
 #nav-chats {
     background-color: #fff;
-    height: 71.7%;
-    overflow-y: auto;
-}
-
-ul {
+    height: 50%;
     list-style-type: none;
+    height: calc(80vh - 30vh);
+    width: 100%;
+    overflow-y: auto;
 }
 
 #nav-chats li {
     display: flex;
-    padding: 5px 10px;
+    padding: 15px;
     cursor: pointer;
 }
 
@@ -186,9 +193,9 @@ li:hover {
 /* Right Section Rules */
 
 /* Chat-bar Rules */
-.chat-bar {
-    background-color: #eaeaea;
-    display: flex;
+.bar.chat {
+    /* background-color: #eaeaea; */
+    /* display: flex; */
     align-items: center;
     padding: 5px 10px;
     /* DEBUG */
@@ -218,8 +225,9 @@ li:hover {
 #chat {
     background-image: url(../imgs/mine.jpg);
     padding: 50px;
-    height: 80%;
+    height: 60vh;
     overflow-y: auto;
+    width: 100%;
 }
 
 #chat ul {
@@ -229,7 +237,7 @@ li:hover {
 }
 
 .msg {
-    width: 30%;
+    max-width: 300px;
     height: 10%;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -291,16 +299,16 @@ li:hover {
 
 /* Chat bottom bar Rules */
 
-.chat-bar.bottom {
+.bar.chat.bottom {
     /* height: 10%; */
     padding: 13.5px 5px;
 }
 
-.chat-bar.bottom i {
+.bar.chat.bottom i {
     font-size: 23px;
 }
 
-.chat-bar.bottom input {
+.bar.chat.bottom input {
     width: 90%;
     margin: 0 15px;
     padding: 10px 15px;
