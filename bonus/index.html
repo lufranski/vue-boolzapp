@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>Boolzapp</title>
+</head>
+<body>
+
+    <div id="screen">
+
+        <div id="top"></div>
+
+        <div id="bot"></div>
+
+        <div id="app">
+
+            <div id="left">
+
+                <!-- <div class="user-bar">
+                    
+                    <div id="user-img">
+                        <img :src="contacts[3].avatar">
+                    </div>
+
+                    <h4>Federico Lufrano</h4>
+
+
+                    <div class="controls" id="user-controls">
+                        
+                        <i class="fa-solid fa-circle-notch"></i>
+
+                        <i class="fa-solid fa-message"></i>
+
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+
+                    </div>
+                    
+                </div> -->
+
+                <div class="bar user">
+                    <div id="user-img">
+                        <img :src="contacts[3].avatar">
+                    </div>
+
+                    <h4>Federico Lufrano</h4>
+
+
+                    <div class="controls" id="user-controls">
+                        
+                        <i class="fa-solid fa-circle-notch"></i>
+
+                        <i class="fa-solid fa-message"></i>
+
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+
+                    </div>
+                </div>
+                
+                <div class="bar notifications">
+
+                    <div id="notifications-icon">
+                        
+                        <i class="fa-solid fa-bell-slash"></i>
+
+                    </div>
+
+                    <div id="notifications-text">
+                        
+                        <p>Ricevi notifiche di nuovi messaggi</p>
+
+                        <a href="#">Attiva notifiche desktop</a>
+                    </div>
+
+                </div>
+                
+                <div class="bar search">
+
+                    <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="browseContacts">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </div>
+                
+                <!-- <div id="nav-chats"> -->
+
+                    <ul id="nav-chats">
+                        <template v-for="(contact, index) in contacts">
+
+                            <li v-if="convertContactToLowerCase(contact).includes(convertInputToLowerCase())" @click="chatSwapper(index)">
+    
+                                <div class="contact-img">
+                                    <img :src="contact.avatar">
+                                </div>
+    
+                                <div class="contact-info">
+                                    <h4>{{contact.name}}</h4>
+    
+                                    <p>
+                                        {{contact.messages.length > 0 ?
+                                        contact.messages[contact.messages.length - 1].message : ""}}
+                                    </p>
+
+                                </div>
+    
+                                <div class="hour">
+                                    {{contact.messages.length > 0 ?
+                                        contact.messages[contact.messages.length - 1].date.slice(11, 16) : ""}}
+                                </div>
+    
+                            </li>
+                        </template>
+                    </ul>
+
+
+                <!-- </div> -->
+
+            </div>
+
+            <div id="right">
+
+                <div class="bar chat">
+
+                    <div id="user-img">
+                        <img :src="contacts[activeChat].avatar">
+                    </div>
+
+                    <div id="chat-text">
+
+                        <h4>{{contacts[activeChat].name}}</h4>
+                        <p>
+                            Ultimo accesso oggi alle {{contacts[activeChat].messages.length > 0 ?
+                            contacts[activeChat].messages[contacts[activeChat].messages.length - 1].date.slice(11, 16) : "16:30"}}
+                        </p>
+                            
+                        
+                    </div>
+
+
+                    <div id="chat-controls" class="controls">
+                        
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <i class="fa-solid fa-paperclip"></i>
+
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+
+                    </div>
+
+                </div>
+
+                <div id="chat">
+
+                    
+                    <ul>
+                        <template v-for="(msg, index, isOpen) in contacts[activeChat].messages">
+                            <li 
+                                class="msg" :class="contacts[activeChat].messages[index].status === 'sent'? 'sent' : 'received' "
+                                @mouseover="onHover(msg)"
+                                @mouseleave="onLeave(msg)">
+                                <!-- @mouseover="visible = true" @mouseleave="visible = false" -->
+    
+                                    <div class="msg-text">
+                                        {{contacts[activeChat].messages[index].message}}
+                                    </div>
+    
+                                    <div class="msg-info">
+                                        {{contacts[activeChat].messages[index].date.slice(11,16)}}
+                                    </div>
+                                    
+                                    <!-- v-if="visible" -->
+                                    <div class="hover-chevron" @click="msg.isOpen = true">
+                                        <i class="fa-solid fa-chevron-down" :class="msg.isOver ? 'active' : 'hidden' "></i>
+                                    </div>
+
+                                    <div v-if="msg.isOpen" class="chevron-menu">
+
+                                        <div class="chevron-menu-controls">
+                                            Message Info
+                                        </div>
+
+                                        <div class="chevron-menu-controls" @click="deleteMsg(index)">
+                                            Delete Message
+                                        </div>
+
+                                    </div>
+
+    
+                            </li>
+                        </template>
+                    </ul>
+
+
+
+                </div>
+
+                <div class="bar chat bottom">
+
+                    <i class="fa-regular fa-face-smile"></i>
+
+                    <input type="text" placeholder="Scrivi un messaggio" v-model="newMsg" @KeyUp.enter="addNewMsg(activeChat)">
+
+                    <i class="fa-solid fa-microphone"></i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
