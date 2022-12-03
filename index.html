@@ -113,7 +113,11 @@
                     <div id="chat-text">
 
                         <h4>{{contacts[activeChat].name}}</h4>
-                        <p>Ultimo accesso oggi alle 12.00</p>
+                        <p>
+                            Ultimo accesso oggi alle {{contacts[activeChat].messages.length > 0 ?
+                            contacts[activeChat].messages[contacts[activeChat].messages.length - 1].date.slice(11, 16) : "16:30"}}
+                        </p>
+                            
                         
                     </div>
 

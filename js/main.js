@@ -223,9 +223,21 @@ createApp({
         },
         addNewMsg(index){
             
+            let now = new Date();
+                
+            console.log(now);
+
+            let rightNow = now.toTimeString();
+
+            console.log(rightNow , rightNow.length);
+
+            let rightNowMaProprioNow = rightNow.slice(0,8);
+
+            console.log(rightNowMaProprioNow);
+
             this.contacts[index].messages.push(
                 {
-                    date: '10/01/2020 20:50:00', 
+                    date: '10/01/2020 ' + rightNowMaProprioNow, 
                     message: this.newMsg, 
                     status: 'sent'
                 }
@@ -238,9 +250,15 @@ createApp({
         },
         contactAnswers(index){
 
+            let now = new Date();
+                
+            let rightNow = now.toTimeString();
+
+            let rightNowMaProprioNow = rightNow.slice(0,8)
+
             this.contacts[index].messages.push(
                 {
-                    date: '10/01/2020 20:50:00', 
+                    date: '10/01/2020 ' + rightNowMaProprioNow, 
                     message: 'Oke', 
                     status: 'received'
                 }
