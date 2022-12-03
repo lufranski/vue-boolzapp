@@ -263,12 +263,12 @@ li:hover {
     position: absolute;
     top: 2px;
     right: 8px;
-    display: none;
+    /* display: none; */
 }
 
-li:hover .hover-chevron {
+/* li:hover .hover-chevron {
     display: block;
-}
+} */
 
 .chevron-menu {
     position: absolute;
@@ -304,4 +304,12 @@ li:hover .hover-chevron {
     width: 90%;
     margin: 0 15px;
     padding: 10px 15px;
+}
+
+.hidden {
+    display: none;
+}
+
+.active {
+    display: block;
 }

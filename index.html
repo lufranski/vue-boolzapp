@@ -81,11 +81,16 @@
                                 <div class="contact-info">
                                     <h4>{{contact.name}}</h4>
     
-                                    <p>{{contact.messages[contact.messages.length - 1].message}}</p>
+                                    <p>
+                                        {{contact.messages.length > 0 ?
+                                        contact.messages[contact.messages.length - 1].message : ""}}
+                                    </p>
+
                                 </div>
     
                                 <div class="hour">
-                                    {{contact.messages[contact.messages.length - 1].date.slice(11,16)}}
+                                    {{contact.messages.length > 0 ?
+                                        contact.messages[contact.messages.length - 1].date.slice(11, 16) : ""}}
                                 </div>
     
                             </li>
@@ -129,9 +134,11 @@
 
                     
                     <ul>
-                        <template v-for="(msg, index) in contacts[activeChat].messages">
+                        <template v-for="(msg, index, isOpen) in contacts[activeChat].messages">
                             <li 
-                                class="msg" :class="contacts[activeChat].messages[index].status === 'sent'? 'sent' : 'received' ">
+                                class="msg" :class="contacts[activeChat].messages[index].status === 'sent'? 'sent' : 'received' "
+                                @mouseover="onHover(msg)"
+                                @mouseleave="onLeave(msg)">
                                 <!-- @mouseover="visible = true" @mouseleave="visible = false" -->
     
                                     <div class="msg-text">
@@ -143,17 +150,17 @@
                                     </div>
                                     
                                     <!-- v-if="visible" -->
-                                    <div class="hover-chevron" @click="chevronMenu(index)">
-                                        <i class="fa-solid fa-chevron-down"></i>
+                                    <div class="hover-chevron" @click="msg.isOpen = true">
+                                        <i class="fa-solid fa-chevron-down" :class="msg.isOver ? 'active' : 'hidden' "></i>
                                     </div>
 
-                                    <div v-if="isOpen === index" class="chevron-menu">
+                                    <div v-if="msg.isOpen" class="chevron-menu">
 
                                         <div class="chevron-menu-controls">
                                             Message Info
                                         </div>
 
-                                        <div class="chevron-menu-controls" @click="deleteMsg(activeChat, index)">
+                                        <div class="chevron-menu-controls" @click="deleteMsg(index)">
                                             Delete Message
                                         </div>
 
