@@ -13,7 +13,7 @@ createApp({
                'Che cos/è il genio? È fantasia, intuizione, decisione e velocità d/esecuzione.',
                'Svegliati, Neo. Matrix... ha te... Segui il Coniglio Bianco...',
                'Jack, ti prego! Sono solo un povero sindaco che fa il suo mestiere! Non posso prendere le decisioni tutto da solo!',
-               'Però quanto a te,  quello che puoi fare che tu, per te qualcosa da poter fare dovrebbe esserci. Non ti costringerà nessuno. Pensa da te stesso, decidi da te stesso che cosa adesso tu stesso debba fare.',
+               'Però quanto a te, quanto a quello che non puoi fare che tu, per te qualcosa da poter fare dovrebbe esserci. Non ti costringerà nessuno. Pensa da te stesso, decidi da te stesso che cosa adesso tu stesso debba fare.',
                'Salve, sono Troy McClure! Forse vi ricorderete di me per...',
                'Anche il capitano del Titanic lo diceva: "Ma no, ma no, è solo un rumorino! Da niente!" ',
                'Ti sembro scontento, Johnny? Minchia, Carabbaggio!' 
@@ -240,17 +240,22 @@ createApp({
 
             let rightNowMaProprioNow = rightNow.slice(0,8);
 
-            this.contacts[index].messages.push(
-                {
-                    date: '10/01/2020 ' + rightNowMaProprioNow, 
-                    message: this.newMsg, 
-                    status: 'sent'
-                }
-            );
+            if(!this.emptyStringValidation(this.newMsg)){
+
+                this.contacts[index].messages.push(
+                    {
+                        date: '10/01/2020 ' + rightNowMaProprioNow, 
+                        message: this.newMsg, 
+                        status: 'sent'
+                    }
+                );
+
+                setTimeout(() => this.contactAnswers(index), 2000);
+            }
+
                 
             this.newMsg = '';
                 
-            setTimeout(() => this.contactAnswers(index), 2000);
                 
         },
         contactAnswers(index){
@@ -261,13 +266,17 @@ createApp({
 
             let rightNowMaProprioNow = rightNow.slice(0,8)
 
-            this.contacts[index].messages.push(
-                {
-                    date: '10/01/2020 ' + rightNowMaProprioNow, 
-                    message: this.randomMsgs[this.numberGenerator()], 
-                    status: 'received'
-                }
-            );
+            // if(newMsg.length > 0){
+
+                this.contacts[index].messages.push(
+                    {
+                        date: '10/01/2020 ' + rightNowMaProprioNow, 
+                        message: this.randomMsgs[this.numberGenerator()], 
+                        status: 'received'
+                    }
+                );
+
+            // }
 
         },
         convertInputToLowerCase(){
@@ -300,6 +309,11 @@ createApp({
 
             return Math.floor(Math.random() * 10);
             
+
+        },
+        emptyStringValidation(string){
+            
+            return /^\s*$/.test(string)
 
         }
         
